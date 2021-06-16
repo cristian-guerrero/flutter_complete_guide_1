@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/question.dart';
 /*
 void main() {
   //
@@ -24,16 +25,16 @@ class _AppState extends State<App> {
       home: Scaffold(
           appBar: AppBar(
             title: Text(
-              'App title',
+              'App question',
             ),
           ),
           body: Container(
-            padding: EdgeInsets.all(5),
+            //padding: EdgeInsets.all(5),
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.start,
 
               children: [
-                Text(response),
+                Question(response),
                 Row(
                   children: [
                     Expanded(
