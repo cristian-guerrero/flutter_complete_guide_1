@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/answer.dart';
 import 'package:flutter_complete_guide/question.dart';
 /*
 void main() {
@@ -25,7 +26,7 @@ class _AppState extends State<App> {
       home: Scaffold(
           appBar: AppBar(
             title: Text(
-              'App question',
+              'App Question',
             ),
           ),
           body: Container(
@@ -35,22 +36,16 @@ class _AppState extends State<App> {
 
               children: [
                 Question(response),
-                Row(
-                  children: [
-                    Expanded(
-                        flex: 1,
-                        child: ElevatedButton(
-                            onPressed: answerQuestion('Answer 1 '),
-                            child: Text('Answer 1 '))),
-                  ],
-                ),
+                Answer(
+                    answerQuestion: answerQuestion('Answer 1'),
+                    text: 'Answer 1'),
 
-                ElevatedButton(
-                    onPressed: answerQuestion('Answer 2 '),
-                    child: Text('Answer 2 ')),
-                ElevatedButton(
-                    onPressed: answerQuestion('Answer 3 '),
-                    child: Text('Answer 3 ')),
+                Answer(
+                    answerQuestion: answerQuestion('Answer 1'),
+                    text: 'Answer 1'),
+                Answer(
+                    answerQuestion: answerQuestion('Answer 1'),
+                    text: 'Answer 1'),
                 // RaisedButton(onPressed: onPressed)
               ],
             ),
@@ -92,8 +87,10 @@ class Person3 {
   int age;
 
   Person3(this.name, this.age);
+  Person3.old(this.name) : this.age = 22;
 }
 
 var p2 = Person2(name: 'Foo', age: 69);
 var p = Person('inputName', 22);
 var p3 = Person3('fulano', 37);
+var p32 = Person3.old('Other name');
